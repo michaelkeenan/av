@@ -103,7 +103,7 @@ module Av
           # Matching lines like:
           # Video: h264, yuvj420p, 640x480 [PAR 72:72 DAR 4:3], 10301 kb/s, 30 fps, 30 tbr, 600 tbn, 600 tbc
           if line =~ /Video:(.*)/
-            size = $1.to_s.match(/\d{3,5}x\d{3,5}/).to_s
+            size = $1.to_s.match(/\d{2,5}x\d{2,5}/).to_s
             meta[:size] = size unless size.empty?
             if meta[:size]
               meta[:width], meta[:height] = meta[:size].split('x').map(&:to_i)
